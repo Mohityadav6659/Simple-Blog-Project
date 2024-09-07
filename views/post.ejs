@@ -1,0 +1,29 @@
+<!-- backend/views/post.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= post.title %></h1>
+      <a class="button" href="/">Back to Home</a>
+    </header>
+    <main>
+      <div class="container">
+        <p class="post-content"><%= post.content %></p>
+
+        <a class="button" href="/edit/<%= post.id %>">Edit</a>
+
+        <form
+          action="/delete/<%= post.id %>"
+          method="POST"
+          style="display: inline"
+        >
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
